@@ -1,18 +1,25 @@
 #https://www.acmicpc.net/problem/1929
 
-def sosu(A):
-
-    if 2 in A:
-        print(2)
-    for i in A:
-        a=i+1-i//2
-        for n in range(2,a):
-            if i%n==0:break
-            elif i//n<2:
-                print(i)
+#https://www.acmicpc.net/problem/1929
 
 A=[]
+B=[]
+a=()
 x,y=map(int,input().split())
+A = range(2, y + 1)
 for i in range(x,y+1):
-    A.append(i)
-sosu(A)
+    B.append(i)
+    if 1 in B:
+        B.remove(1)
+for j in range(len(A)):
+    for k in B:
+        if k%A[j]==0:
+            if A[j] in B:
+                a=A[j]
+            B.remove(k)
+            try:
+                if A[j] not in B:
+                    B.append(a)
+            except:continue
+print(A)
+#print(A)
