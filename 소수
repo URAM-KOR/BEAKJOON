@@ -19,3 +19,4 @@ A=[]
 for i in range(int(input()),int(input())+1):
     A.append(i)
 sosu(A)
+ 
